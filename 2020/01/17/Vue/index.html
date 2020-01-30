@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+        LZS-Blog
+    </title>
+    <link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-reply replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            关于Vue路由的理解
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h4 id="Vue-router的原理"><a href="#Vue-router的原理" class="headerlink" title="Vue-router的原理"></a>Vue-router的原理</h4><p>vue-router的原理就是监听URL的地址变化，从而渲染不同的组件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vue-router的模式主要有hash模式和history模式</span><br><span class="line"></span><br><span class="line">1，hash 模式的原理(url里带有#号的部分):</span><br><span class="line"></span><br><span class="line">		在vue-router.js的2.8版本之前，在路由的hash部分发生了任何变化，都会执行window.onhaschange方法，在这个方法内部我们可以根据当前匹配到的hash去加载对应的组件。</span><br><span class="line"></span><br><span class="line">		在vue-router.js的2.8版本之后，内部使用window.history.pushState来完成相应的功能。</span><br><span class="line"></span><br><span class="line">	hash模式的特点：在切换路由的时候，不会向服务器发送请求，但是当刷新网页的时候，此时会向服务器发送请求，在向服务器发送请求的时候，hash部分的信息是不会发送到服务器的，所以此时刷新网页没有问题</span><br><span class="line"></span><br><span class="line">2，history模式的原理(url中的通过/来表示路径)</span><br><span class="line"></span><br><span class="line">		内部使用window.history.pushState来处理url的变化，切换对应的组件</span><br><span class="line"></span><br><span class="line">	history模式的特点：在切换路由的时候，不会向服务器发送请求,但是当刷新网页的时候，此时会向服务器发送请求，如果后端没有对应的接口与此匹配，则会报资源找不到的错误</span><br><span class="line">	history模式一般不能刷新网页</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p>Copyright © 2020 <a class="flink" href="https://hexo.io">Hexo</a>-<a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek">Geek</a>.
+        <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
+            <input type="checkbox" name="switch" id="update_style">
+            <span class="el-switch-style"></span>
+        </label>
+<!--         <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+        </script> -->
+    </p>
+</div>
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="5IFBhoo8VwNNHH3f39navMQH-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="OoU8s0exRXkeD4rHj85jm4Bh">
+<script src="/libs/jquery.min.js"></script>
+<script src="/libs/highlight/highlight.pack.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script src="/js/js.js"></script>
+<style type="text/css">
+.v * {
+    color: #698fca;
+}
+
+.v .vlist .vcard .vhead .vsys {
+    color: #3a3e4a;
+}
+
+.v .vlist .vcard .vh .vmeta .vat {
+    color: #638fd5;
+}
+
+.v .vlist .vcard .vhead .vnick {
+    color: #6ba1ff;
+}
+
+.v a {
+    color: #8696b1;
+}
+
+.v .vlist .vcard .vhead .vnick:hover {
+    color: #669bfc;
+}
+</style>
+</body>
+
+</html>
