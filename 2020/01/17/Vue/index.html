@@ -24,8 +24,15 @@
     </div>
     <div class="post-content">
         <h4 id="Vue-router的原理"><a href="#Vue-router的原理" class="headerlink" title="Vue-router的原理"></a>Vue-router的原理</h4><p>vue-router的原理就是监听URL的地址变化，从而渲染不同的组件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vue-router的模式主要有hash模式和history模式</span><br><span class="line"></span><br><span class="line">1，hash 模式的原理(url里带有#号的部分):</span><br><span class="line"></span><br><span class="line">		在vue-router.js的2.8版本之前，在路由的hash部分发生了任何变化，都会执行window.onhaschange方法，在这个方法内部我们可以根据当前匹配到的hash去加载对应的组件。</span><br><span class="line"></span><br><span class="line">		在vue-router.js的2.8版本之后，内部使用window.history.pushState来完成相应的功能。</span><br><span class="line"></span><br><span class="line">	hash模式的特点：在切换路由的时候，不会向服务器发送请求，但是当刷新网页的时候，此时会向服务器发送请求，在向服务器发送请求的时候，hash部分的信息是不会发送到服务器的，所以此时刷新网页没有问题</span><br><span class="line"></span><br><span class="line">2，history模式的原理(url中的通过/来表示路径)</span><br><span class="line"></span><br><span class="line">		内部使用window.history.pushState来处理url的变化，切换对应的组件</span><br><span class="line"></span><br><span class="line">	history模式的特点：在切换路由的时候，不会向服务器发送请求,但是当刷新网页的时候，此时会向服务器发送请求，如果后端没有对应的接口与此匹配，则会报资源找不到的错误</span><br><span class="line">	history模式一般不能刷新网页</span><br></pre></td></tr></table></figure>
-
+<p>vue-router的模式主要有hash模式和history模式</p>
+<p>1，hash 模式的原理(url里带有#号的部分):</p>
+<p>在vue-router.js的2.8版本之前，在路由的hash部分发生了任何变化，<br>    都会执行window.onhaschange方法，在这个方法内部我们可以根据当<br>    前匹配到的hash去加载对应的组件。</p>
+<p>在vue-router.js的2.8版本之后，内部使用window.history.pushState<br>来完成相应的功能。</p>
+<p>hash模式的特点：在切换路由的时候，不会向服务器发送请求，<br>但是当刷新网页的时候，此时会向服务器发送请求，在向服务器发送请求的时候，<br>hash部分的信息是不会发送到服务器的，所以此时刷新网页没有问题</p>
+<p>2，history模式的原理(url中的通过/来表示路径)</p>
+<p>内部使用window.history.pushState来处理url的变化，<br>    切换对应的组件</p>
+<p>history模式的特点：在切换路由的时候，不会向服务器发送请求,<br>    但是当刷新网页的时候，此时会向服务器发送请求，<br>    如果后端没有对应的接口与此匹配，<br>    则会报资源找不到的错误<br>    history模式一般不能刷新网页</p>
+<p>#### </p>
 
     </div>
     
