@@ -12,6 +12,12 @@
       
       
       
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -24,6 +30,12 @@
         <content type="html"><![CDATA[<h4 id="Vue-router的原理"><a href="#Vue-router的原理" class="headerlink" title="Vue-router的原理"></a>Vue-router的原理</h4><p>vue-router的原理就是监听URL的地址变化，从而渲染不同的组件。</p><p>vue-router的模式主要有hash模式和history模式</p><p>1，hash 模式的原理(url里带有#号的部分):</p><p>在vue-router.js的2.8版本之前，在路由的hash部分发生了任何变化，<br>    都会执行window.onhaschange方法，在这个方法内部我们可以根据当<br>    前匹配到的hash去加载对应的组件。</p><p>在vue-router.js的2.8版本之后，内部使用window.history.pushState<br>来完成相应的功能。</p><p>hash模式的特点：在切换路由的时候，不会向服务器发送请求，<br>但是当刷新网页的时候，此时会向服务器发送请求，在向服务器发送请求的时候，<br>hash部分的信息是不会发送到服务器的，所以此时刷新网页没有问题</p><p>2，history模式的原理(url中的通过/来表示路径)</p><p>内部使用window.history.pushState来处理url的变化，<br>    切换对应的组件</p><p>history模式的特点：在切换路由的时候，不会向服务器发送请求,<br>    但是当刷新网页的时候，此时会向服务器发送请求，<br>    如果后端没有对应的接口与此匹配，<br>    则会报资源找不到的错误<br>    history模式一般不能刷新网页</p><p>#### </p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
       
     </entry>
     
@@ -38,6 +50,12 @@
       
       
       
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -50,6 +68,12 @@
         <content type="html"><![CDATA[<p><img src="/2020/01/12/小外甥/ws.jpg" alt="外甥"></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 日常 </tag>
+            
+        </tags>
       
     </entry>
     
