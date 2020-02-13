@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="vue-网易云, LZS-Blog">
-    <meta name="description" content="背景：在学完vue后和几个朋友用vue也做过一个 webapp ,类似于追书神器的那种（[读了吗](smallant.top:8888)）;
-
-用的是vue-cli 3来创建项目的，用了MUI, axios,vue-router,vuex来">
+    <meta name="description" content="背景：在学完vue后和几个朋友用vue也做过一个 webapp ,类似于追书神器的那种（读了吗）;
+用的是vue-cli 3来创建项目的，用了MUI, axios,vue-router,vuex来写的，我完成了精选页面和搜索的页面和    ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -460,29 +459,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h5><pre><code>在学完vue后和几个朋友用vue也做过一个 webapp ,类似于追书神器的那种（[读了吗](smallant.top:8888)）;
-
-用的是vue-cli 3来创建项目的，用了MUI, axios,vue-router,vuex来写的，我完成了精选页面和搜索的页面和        功能，对接口的理解和跨域的问题不是很熟练，于是我选择了github上开源的[网易云api](&lt;https://binaryify.github.io/NeteaseCloudMusicApi/#/&gt;),来做一个网易云的网站，    来掌握。</code></pre><h5 id="起步："><a href="#起步：" class="headerlink" title="起步："></a>起步：</h5><pre><code>用vue create app 来创建项目 ，我这里选择了自动安装（当时图着省事，没选择手动安装），
-
-用的几个插件 ： vue-router    axios  ;
-
-ui库 ： Ant-ui
-
-在main.js文件里 引入 下载的文件
-
-`    import &#39;ant-design-vue/dist/antd.css&#39;; `引入Ant Design Vue样式
-
-`    import Antd from &#39;ant-design-vue&#39;`引入Ant Design Vue组件
-
-`    Vue.use(Antd)`    挂载到vue中新建一个routerwen&#39;j
-
-路由的配置 ：在src文件夹内新建一个router文件夹，然后在其文件夹里新建index.js文件，在此文件
-
-内配置路由：`import Vue from &#39;vue&#39;`  `import VueRouter from &#39;vue-router&#39;`将此配置写入
-
-`Vue.use(VueRouter)` Vue全局使用Router。
-
-还需要再main.js里导出。</code></pre><pre><code>跨域问题的解决：</code></pre><pre><code>    这个问题看了好多帖子才解决，方法是 在根目录下新建一个vue.config.js文件</code></pre><p>在其中配置：</p>
+                <h5 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h5><p>在学完vue后和几个朋友用vue也做过一个 webapp ,类似于追书神器的那种（<a href="smallant.top:8888" target="_blank" rel="noopener">读了吗</a>）;</p>
+<p>用的是vue-cli 3来创建项目的，用了MUI, axios,vue-router,vuex来写的，我完成了精选页面和搜索的页面和        功能，对接口的理解和跨域的问题不是很熟练，于是我选择了github上开源的<a href="https://binaryify.github.io/NeteaseCloudMusicApi/#/" target="_blank" rel="noopener">网易云api</a>,来做一个网易云的网站，    来掌握。</p>
+<h5 id="起步："><a href="#起步：" class="headerlink" title="起步："></a>起步：</h5><p>用vue create app 来创建项目 ，我这里选择了自动安装（当时图着省事，没选择手动安装），</p>
+<p>用的几个插件 ： vue-router    axios  ;</p>
+<p>ui库 ： Ant-ui</p>
+<p>在main.js文件里 引入 下载的文件</p>
+<p><code>import &#39;ant-design-vue/dist/antd.css&#39;;</code>引入Ant Design Vue样式</p>
+<p><code>import Antd from &#39;ant-design-vue&#39;</code>引入Ant Design Vue组件</p>
+<p><code>Vue.use(Antd)</code>    挂载到vue中新建一个routerwen’j</p>
+<p>路由的配置 ：在src文件夹内新建一个router文件夹，然后在其文件夹里新建index.js文件，在此文件</p>
+<p>内配置路由：<code>import Vue from &#39;vue&#39;</code>  <code>import VueRouter from &#39;vue-router&#39;</code>将此配置写入</p>
+<p><code>Vue.use(VueRouter)</code> Vue全局使用Router。</p>
+<p>还需要再main.js里导出。</p>
+<p>跨域问题的解决：</p>
+<p>这个问题看了好多帖子才解决，方法是 在根目录下新建一个vue.config.js文件</p>
+<p>在其中配置：</p>
 <p><img src="/2020/02/13/vue-网易云/boke/source/_posts/vue2/1.png" alt></p>
 <p>请求地址加上/api的前缀</p>
 <h5 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h5><p>刚开始遇到最难的问题就是跨域，后面就是一些比较基础的布局加axios请求，在写更多歌单的页面的时候遇到一个问题；</p>
@@ -1006,9 +998,8 @@ ui库 ： Ant-ui
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            背景：在学完vue后和几个朋友用vue也做过一个 webapp ,类似于追书神器的那种（[读了吗](smallant.top:8888)）;
-
-用的是vue-cli 3来创建项目的，用了MUI, axios,vue-router,vuex来
+                            背景：在学完vue后和几个朋友用vue也做过一个 webapp ,类似于追书神器的那种（读了吗）;
+用的是vue-cli 3来创建项目的，用了MUI, axios,vue-router,vuex来写的，我完成了精选页面和搜索的页面和    
                         
                     </div>
                     <div class="publish-info">
