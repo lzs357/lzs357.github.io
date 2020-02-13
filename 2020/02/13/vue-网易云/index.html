@@ -4,12 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="事件冒泡, LZS-Blog">
-    <meta name="description" content="什么是事件冒泡：当有多个盒子嵌套在一起时，给每个盒子都添加事件（如点击事件），事件会从最里面向最外面执行如下面的例子：
-这是三个相互嵌套的盒子：
+    <meta name="keywords" content="vue-网易云, LZS-Blog">
+    <meta name="description" content="背景：在学完vue后和几个朋友用vue也做过一个 webapp ,类似于追书神器的那种（[读了吗](smallant.top:8888)）;
 
-给他们添加三个点击事件：
-      &amp;lt;div id=&amp;quot;div1&amp;quot;">
+用的是vue-cli 3来创建项目的，用了MUI, axios,vue-router,vuex来">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>事件冒泡 | LZS-Blog</title>
+    <title>vue-网易云 | LZS-Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +305,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">事件冒泡</h1>
+                    <h1 class="description center-align post-title">vue-网易云</h1>
                 </div>
             </div>
         </div>
@@ -429,8 +427,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/js/">
-                                <span class="chip bg-color">js</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -445,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-30
+                    2020-02-13
                 </div>
                 
 
@@ -462,58 +460,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="什么是事件冒泡："><a href="#什么是事件冒泡：" class="headerlink" title="什么是事件冒泡："></a>什么是事件冒泡：</h5><p>当有多个盒子嵌套在一起时，给每个盒子都添加事件（如点击事件），事件会从最里面向最外面执行如下面的例子：</p>
-<p>这是三个相互嵌套的盒子：</p>
-<p><img src="/2020/01/30/bubbing/1.png" alt="三个嵌套的盒子"></p>
-<p>给他们添加三个点击事件：</p>
-<pre><code>      &lt;div id=&quot;div1&quot;&gt;
-            &lt;div id=&quot;div2&quot; &gt;
-                &lt;div id=&quot;div3&quot; onclick=&quot;threeFn()&quot;&gt;
+                <h5 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h5><pre><code>在学完vue后和几个朋友用vue也做过一个 webapp ,类似于追书神器的那种（[读了吗](smallant.top:8888)）;
 
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;</code></pre><pre><code>var div1 = document.getElementById(&#39;div1&#39;)
-        div1.onclick = function(){
-            alert(&quot;你点击了最大的盒子&quot;);
-        }
-        var div2 = document.getElementById(&#39;div2&#39;)
-        div2.addEventListener(&#39;click&#39;,function(){
-            alert(&#39;你点击了最中间的盒子&#39;);
-        })
-        function threeFn(){
-            alert(&#39;你点击了最小的盒子&#39;);
-        }</code></pre><p>这时候依次点击这三个盒子时会发现：</p>
-<p>最外面的盒子：<img src="/2020/01/30/bubbing/2.png" alt></p>
-<p>中间的盒子：</p>
-<p><img src="/2020/01/30/bubbing/3.png" alt></p>
-<p><img src="/2020/01/30/bubbing/2.png" alt></p>
-<p>最里面的盒子：</p>
-<p><img src="/2020/01/30/bubbing/4.png" alt></p>
-<p><img src="/2020/01/30/bubbing/3.png" alt></p>
-<p><img src="/2020/01/30/bubbing/2.png" alt></p>
-<p>这就是事件冒泡</p>
-<h5 id="怎么阻止事件冒泡呢"><a href="#怎么阻止事件冒泡呢" class="headerlink" title="怎么阻止事件冒泡呢"></a>怎么阻止事件冒泡呢</h5><p>使用event.stopPropagation( );</p>
-<p>代码如下：</p>
-<pre><code>&lt;div id=&quot;div1&quot;&gt;
-            &lt;div id=&quot;div2&quot; &gt;
-                &lt;div id=&quot;div3&quot; onclick=&quot;threeFn(event)&quot;&gt;
+用的是vue-cli 3来创建项目的，用了MUI, axios,vue-router,vuex来写的，我完成了精选页面和搜索的页面和        功能，对接口的理解和跨域的问题不是很熟练，于是我选择了github上开源的[网易云api](&lt;https://binaryify.github.io/NeteaseCloudMusicApi/#/&gt;),来做一个网易云的网站，    来掌握。</code></pre><h5 id="起步："><a href="#起步：" class="headerlink" title="起步："></a>起步：</h5><pre><code>用vue create app 来创建项目 ，我这里选择了自动安装（当时图着省事，没选择手动安装），
 
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;</code></pre><pre><code>var div1 = document.getElementById(&#39;div1&#39;)
-    div1.onclick = function(event){
-        alert(&quot;你点击了最大的盒子&quot;);
-         event.stopPropagation();
-    }
-    var div2 = document.getElementById(&#39;div2&#39;)
-    div2.addEventListener(&#39;click&#39;,function(event){
-        alert(&#39;你点击了最中间的盒子&#39;);
-          event.stopPropagation();
-    })
-    function threeFn(event){
-        alert(&#39;你点击了最小的盒子&#39;);
-          event.stopPropagation();
-    }</code></pre><p>这时点击任意一个盒子只会触发当前的事件。</p>
+用的几个插件 ： vue-router    axios  ;
+
+ui库 ： Ant-ui
+
+在main.js文件里 引入 下载的文件
+
+`    import &#39;ant-design-vue/dist/antd.css&#39;; `引入Ant Design Vue样式
+
+`    import Antd from &#39;ant-design-vue&#39;`引入Ant Design Vue组件
+
+`    Vue.use(Antd)`    挂载到vue中新建一个routerwen&#39;j
+
+路由的配置 ：在src文件夹内新建一个router文件夹，然后在其文件夹里新建index.js文件，在此文件
+
+内配置路由：`import Vue from &#39;vue&#39;`  `import VueRouter from &#39;vue-router&#39;`将此配置写入
+
+`Vue.use(VueRouter)` Vue全局使用Router。
+
+还需要再main.js里导出。</code></pre><pre><code>跨域问题的解决：</code></pre><pre><code>    这个问题看了好多帖子才解决，方法是 在根目录下新建一个vue.config.js文件</code></pre><p>在其中配置：</p>
+<p><img src="/2020/02/13/vue-网易云/boke/source/_posts/vue2/1.png" alt></p>
+<p>请求地址加上/api的前缀</p>
+<h5 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h5><p>刚开始遇到最难的问题就是跨域，后面就是一些比较基础的布局加axios请求，在写更多歌单的页面的时候遇到一个问题；</p>
+<p>请求歌单分类的数据时，拿到的数据直接用v-for遍历的话，不能按照类别来遍历，接口里面给了它们一个category属性好让前台能按条件来渲染，比如category : 1,它对应的就是风格这一类的数据，这时就是要使用</p>
+<p>v-if 来写 <code>v-if=&quot;item.category==2&quot;</code>  这里踩过一个坑 就是v-for 和v-if 不能一起使用 具体内容<a href="https://blog.csdn.net/TurtleOrange/article/details/89518721" target="_blank" rel="noopener">请看</a></p>
+<p><img src="/2020/02/13/vue-网易云/boke/source/_posts/vue2/2.png" alt></p>
+<p>这个是已经解决好的；</p>
+<p>后面就是点击每个小分类来让歌单进行相应的变化，这里用到了兄弟组件的传值 和watch()方法的使用，</p>
+<p>在跟多歌单这个页面 我用了两个组件再把他们引入了进来<img src="/2020/02/13/vue-网易云/boke/source/_posts/vue2/3.png" alt></p>
+<p>allclass 时全部分类的组件， songlists 是歌单的组件</p>
+<p>两者互为兄弟组件</p>
+<p>再请求歌单的接口里有一个<code>cat</code>属性它是控制请求哪一类歌单的，通过中央事件总线来将 <code>allclass组件</code>的值传到 <code>songlists组件里</code>  大致的做法是这样</p>
+<p>由于事件有限比较详细的写法就下次说</p>
 
             </div>
             <hr/>
@@ -539,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lzs357.github.io/2020/01/30/bubbing/">https://lzs357.github.io/2020/01/30/bubbing/</a>
+                    <a href="https://lzs357.github.io/2020/02/13/vue-网易云/">https://lzs357.github.io/2020/02/13/vue-网易云/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,8 +559,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/js/">
-                                    <span class="chip bg-color">js</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -1007,9 +989,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/02/13/vue-网易云/">
                     <div class="card-image">
@@ -1029,9 +1012,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1040,6 +1023,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1058,27 +1042,28 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/17/Vue/">
+                <a href="/2020/01/30/bubbing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="关于Vue路由的理解">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="事件冒泡">
                         
-                        <span class="card-title">关于Vue路由的理解</span>
+                        <span class="card-title">事件冒泡</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue-router的原理vue-router的原理就是监听URL的地址变化，从而渲染不同的组件。
-vue-router的模式主要有hash模式和history模式
-1，hash 模式的原理(url里带有#号的部分):
-在vue-route
+                            什么是事件冒泡：当有多个盒子嵌套在一起时，给每个盒子都添加事件（如点击事件），事件会从最里面向最外面执行如下面的例子：
+这是三个相互嵌套的盒子：
+
+给他们添加三个点击事件：
+      &lt;div id=&quot;div1&quot;
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-30
                             </span>
                         <span class="publish-author">
                             
@@ -1091,8 +1076,8 @@ vue-router的模式主要有hash模式和history模式
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>
