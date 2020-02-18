@@ -475,15 +475,15 @@
 <p>跨域问题的解决：</p>
 <p>这个问题看了好多帖子才解决，方法是 在根目录下新建一个vue.config.js文件</p>
 <p>在其中配置：</p>
-<p><img src="//lzs357.github.io/2020/02/18/vue-music-1/boke/source/_posts/vue-music-1/1.png" alt="跨域配置"></p>
+<p><img src="http://q5vmtsp5x.bkt.clouddn.com/1.png" alt="跨域配置"></p>
 <p>请求地址加上/api的前缀</p>
 <h5 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h5><p>刚开始遇到最难的问题就是跨域，后面就是一些比较基础的布局加axios请求，在写更多歌单的页面的时候遇到一个问题；</p>
 <p>请求歌单分类的数据时，拿到的数据直接用v-for遍历的话，不能按照类别来遍历，接口里面给了它们一个category属性好让前台能按条件来渲染，比如category : 1,它对应的就是风格这一类的数据，这时就是要使用</p>
 <p>v-if 来写 <code>v-if=&quot;item.category==2&quot;</code>  这里踩过一个坑 就是v-for 和v-if 不能一起使用 具体内容<a href="https://blog.csdn.net/TurtleOrange/article/details/89518721" target="_blank" rel="noopener">请看</a></p>
-<p><img src="//lzs357.github.io/2020/02/18/vue-music-1/boke/source/_posts/vue-music-1/2.png" alt="图片1"></p>
+<p><img src="http://q5vmtsp5x.bkt.clouddn.com/2.png" alt="图片1"></p>
 <p>这个是已经解决好的；</p>
 <p>后面就是点击每个小分类来让歌单进行相应的变化，这里用到了兄弟组件的传值 和watch()方法的使用，</p>
-<p>在跟多歌单这个页面 我用了两个组件再把他们引入了进来<img src="//lzs357.github.io/2020/02/18/vue-music-1/boke/source/_posts/vue-music-1/3.png" alt="图片2"></p>
+<p>在跟多歌单这个页面 我用了两个组件再把他们引入了进来<img src="http://q5vmtsp5x.bkt.clouddn.com/3.png" alt="图片2"></p>
 <p>allclass 时全部分类的组件， songlists 是歌单的组件</p>
 <p>两者互为兄弟组件</p>
 <p>再请求歌单的接口里有一个<code>cat</code>属性它是控制请求哪一类歌单的，通过中央事件总线来将 <code>allclass组件</code>的值传到 <code>songlists组件里</code>  大致的做法是这样</p>
