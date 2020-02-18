@@ -464,7 +464,7 @@
             <div id="articleContent">
                 <h5 id="什么是事件冒泡："><a href="#什么是事件冒泡：" class="headerlink" title="什么是事件冒泡："></a>什么是事件冒泡：</h5><p>当有多个盒子嵌套在一起时，给每个盒子都添加事件（如点击事件），事件会从最里面向最外面执行如下面的例子：</p>
 <p>这是三个相互嵌套的盒子：</p>
-<p><img src="/2020/01/30/bubbing/1.png" alt="三个嵌套的盒子"></p>
+<p><img src="//lzs357.github.io/2020/01/30/bubbing/1.png" alt="三个嵌套的盒子"></p>
 <p>给他们添加三个点击事件：</p>
 <pre><code>      &lt;div id=&quot;div1&quot;&gt;
             &lt;div id=&quot;div2&quot; &gt;
@@ -483,14 +483,14 @@
         function threeFn(){
             alert(&#39;你点击了最小的盒子&#39;);
         }</code></pre><p>这时候依次点击这三个盒子时会发现：</p>
-<p>最外面的盒子：<img src="/2020/01/30/bubbing/2.png" alt></p>
+<p>最外面的盒子：<img src="//lzs357.github.io/2020/01/30/bubbing/2.png" alt></p>
 <p>中间的盒子：</p>
-<p><img src="/2020/01/30/bubbing/3.png" alt></p>
-<p><img src="/2020/01/30/bubbing/2.png" alt></p>
+<p><img src="//lzs357.github.io/2020/01/30/bubbing/3.png" alt></p>
+<p><img src="//lzs357.github.io/2020/01/30/bubbing/2.png" alt></p>
 <p>最里面的盒子：</p>
-<p><img src="/2020/01/30/bubbing/4.png" alt></p>
-<p><img src="/2020/01/30/bubbing/3.png" alt></p>
-<p><img src="/2020/01/30/bubbing/2.png" alt></p>
+<p><img src="//lzs357.github.io/2020/01/30/bubbing/4.png" alt></p>
+<p><img src="//lzs357.github.io/2020/01/30/bubbing/3.png" alt></p>
+<p><img src="//lzs357.github.io/2020/01/30/bubbing/2.png" alt></p>
 <p>这就是事件冒泡</p>
 <h5 id="怎么阻止事件冒泡呢"><a href="#怎么阻止事件冒泡呢" class="headerlink" title="怎么阻止事件冒泡呢"></a>怎么阻止事件冒泡呢</h5><p>使用event.stopPropagation( );</p>
 <p>代码如下：</p>
