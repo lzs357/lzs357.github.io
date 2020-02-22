@@ -4,8 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, LZS-Blog">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="关于Vue路由的理解, LZS-Blog">
+    <meta name="description" content="Vue-router的原理vue-router的原理就是监听URL的地址变化，从而渲染不同的组件。
+vue-router的模式主要有hash模式和history模式
+1，hash 模式的原理(url里带有#号的部分):
+在vue-route">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | LZS-Blog</title>
+    <title>关于Vue路由的理解 | LZS-Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -303,12 +306,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">关于Vue路由的理解</h1>
                 </div>
             </div>
         </div>
@@ -423,9 +426,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -437,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-15
+                    2019-10-17
                 </div>
                 
 
@@ -454,15 +461,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h4 id="Vue-router的原理"><a href="#Vue-router的原理" class="headerlink" title="Vue-router的原理"></a>Vue-router的原理</h4><p>vue-router的原理就是监听URL的地址变化，从而渲染不同的组件。</p>
+<p>vue-router的模式主要有hash模式和history模式</p>
+<p>1，hash 模式的原理(url里带有#号的部分):</p>
+<p>在vue-router.js的2.8版本之前，在路由的hash部分发生了任何变化，<br>    都会执行window.onhaschange方法，在这个方法内部我们可以根据当<br>    前匹配到的hash去加载对应的组件。</p>
+<p>在vue-router.js的2.8版本之后，内部使用window.history.pushState<br>来完成相应的功能。</p>
+<p>hash模式的特点：在切换路由的时候，不会向服务器发送请求，<br>但是当刷新网页的时候，此时会向服务器发送请求，在向服务器发送请求的时候，<br>hash部分的信息是不会发送到服务器的，所以此时刷新网页没有问题</p>
+<p>2，history模式的原理(url中的通过/来表示路径)</p>
+<p>内部使用window.history.pushState来处理url的变化，<br>    切换对应的组件</p>
+<p>history模式的特点：在切换路由的时候，不会向服务器发送请求,<br>    但是当刷新网页的时候，此时会向服务器发送请求，<br>    如果后端没有对应的接口与此匹配，<br>    则会报资源找不到的错误<br>    history模式一般不能刷新网页</p>
+<p>#### </p>
 
             </div>
             <hr/>
@@ -488,7 +496,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lzs357.github.io/2019/09/15/hello-world/">https://lzs357.github.io/2019/09/15/hello-world/</a>
+                    <a href="https://lzs357.github.io/2019/10/17/Vue/">https://lzs357.github.io/2019/10/17/Vue/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -525,7 +533,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -956,28 +968,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/11/第一篇博客/">
+                <a href="/2019/12/15/vue-music-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第一篇博客">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="vue-music(1)">
                         
-                        <span class="card-title">第一篇博客</span>
+                        <span class="card-title">vue-music(1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-web前端学习笔记
-
-HTML标签HTML是具有语义化的语言，针对网页的布局，有一类标签代表各种意义的“布局盒子”。所有的布局类标签都主要用来构建页面的内容区域，是双标签类型，是双标签类型，默认显示为块状元素。
-通用的布局标签：。语义：无
+                            背景：在学完vue后和几个朋友用vue也做过一个 webapp ,类似于追书神器的那种（读了吗）;
+用的是vue-cli 3来创建项目的，用了MUI, axios,vue-router,vuex来写的，我完成了精选页面和搜索的页面和    
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-15
                         </span>
                         <span class="publish-author">
                             
@@ -990,8 +999,8 @@ HTML标签HTML是具有语义化的语言，针对网页的布局，有一类标
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基本/">
-                        <span class="chip bg-color">基本</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -1002,27 +1011,35 @@ HTML标签HTML是具有语义化的语言，针对网页的布局，有一类标
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/15/hello-world/">
+                <a href="/2019/10/14/demo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="关于动画demo上传github仓库的方法">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">关于动画demo上传github仓库的方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            首先登陆github账号并创建一个新的仓库，找到下面的按钮
+
+点击按钮后，进入到创建仓库的页面，创建仓库名
+
+点击最下面的按钮即创建完成
+
+点击刚才创建好的仓库找到ssh的URL 并复制备用
+
+接着就是在本地创建文件并关联这个新创建的仓库了
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-14
                             </span>
                         <span class="publish-author">
                             
@@ -1032,7 +1049,14 @@ HTML标签HTML是具有语义化的语言，针对网页的布局，有一类标
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

@@ -4,16 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="关于动画demo上传github仓库的方法, LZS-Blog">
-    <meta name="description" content="首先登陆github账号并创建一个新的仓库，找到下面的按钮
+    <meta name="keywords" content="事件冒泡, LZS-Blog">
+    <meta name="description" content="什么是事件冒泡：当有多个盒子嵌套在一起时，给每个盒子都添加事件（如点击事件），事件会从最里面向最外面执行如下面的例子：
+这是三个相互嵌套的盒子：
 
-点击按钮后，进入到创建仓库的页面，创建仓库名
-
-点击最下面的按钮即创建完成
-
-点击刚才创建好的仓库找到ssh的URL 并复制备用
-
-接着就是在本地创建文件并关联这个新创建的仓库了">
+给他们添加三个点击事件：
+      &amp;lt;div id=&amp;quot;div1&amp;quot;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>关于动画demo上传github仓库的方法 | LZS-Blog</title>
+    <title>事件冒泡 | LZS-Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">关于动画demo上传github仓库的方法</h1>
+                    <h1 class="description center-align post-title">事件冒泡</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +429,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/js/">
+                                <span class="chip bg-color">js</span>
                             </a>
                         
                     </div>
@@ -449,7 +445,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-14
+                    2019-04-22
                 </div>
                 
 
@@ -466,23 +462,58 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>首先登陆github账号并创建一个新的仓库，找到下面的按钮</p>
-<p><img src="//lzs357.github.io/2020/01/14/demo/1.png" alt="创建仓库的按钮"></p>
-<p>点击按钮后，进入到创建仓库的页面，创建仓库名</p>
-<p><img src="//lzs357.github.io/2020/01/14/demo/2.png" alt="仓库名创建栏"></p>
-<p>点击最下面的按钮即创建完成</p>
-<p><img src="//lzs357.github.io/2020/01/14/demo/3.png" alt></p>
-<p>点击刚才创建好的仓库找到ssh的URL 并复制备用</p>
-<p><img src="//lzs357.github.io/2020/01/14/demo/4.png" alt="ssh的URL地址"></p>
-<p>接着就是在本地创建文件并关联这个新创建的仓库了，新建一个文件夹，在文件夹内鼠标右击打开Git Bash命令行</p>
-<p>输入克隆命令（git clone + ssh的url）（创建仓库时复制的ssh的URL），把本地的文件夹除了.git文件之外全部清除</p>
-<p>把要上传的网页放入这个本地文件夹里 依次执行 git add *    git commit -m     git push origin master</p>
-<p><img src="//lzs357.github.io/2020/01/14/demo/5.png" alt></p>
-<p>这样就将本地的网页挂载到GitHub上了</p>
-<p>一些动画demo</p>
-<p>彩虹蜘蛛：&lt;<a href="https://lzs357.github.io/bird/spider/index">https://lzs357.github.io/bird/spider/index</a>&gt;</p>
-<p>C3完成的奔跑的马：&lt;<a href="https://lzs357.github.io/bird/horse/index">https://lzs357.github.io/bird/horse/index</a>&gt;</p>
-<p>Canvas的万花筒：&lt;<a href="https://lzs357.github.io/bird/artascope/index">https://lzs357.github.io/bird/artascope/index</a>&gt;</p>
+                <h5 id="什么是事件冒泡："><a href="#什么是事件冒泡：" class="headerlink" title="什么是事件冒泡："></a>什么是事件冒泡：</h5><p>当有多个盒子嵌套在一起时，给每个盒子都添加事件（如点击事件），事件会从最里面向最外面执行如下面的例子：</p>
+<p>这是三个相互嵌套的盒子：</p>
+<p><img src="//lzs357.github.io/2019/04/22/bubbing/1.png" alt="三个嵌套的盒子"></p>
+<p>给他们添加三个点击事件：</p>
+<pre><code>      &lt;div id=&quot;div1&quot;&gt;
+            &lt;div id=&quot;div2&quot; &gt;
+                &lt;div id=&quot;div3&quot; onclick=&quot;threeFn()&quot;&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;</code></pre><pre><code>var div1 = document.getElementById(&#39;div1&#39;)
+        div1.onclick = function(){
+            alert(&quot;你点击了最大的盒子&quot;);
+        }
+        var div2 = document.getElementById(&#39;div2&#39;)
+        div2.addEventListener(&#39;click&#39;,function(){
+            alert(&#39;你点击了最中间的盒子&#39;);
+        })
+        function threeFn(){
+            alert(&#39;你点击了最小的盒子&#39;);
+        }</code></pre><p>这时候依次点击这三个盒子时会发现：</p>
+<p>最外面的盒子：<img src="//lzs357.github.io/2019/04/22/bubbing/2.png" alt></p>
+<p>中间的盒子：</p>
+<p><img src="//lzs357.github.io/2019/04/22/bubbing/3.png" alt></p>
+<p><img src="//lzs357.github.io/2019/04/22/bubbing/2.png" alt></p>
+<p>最里面的盒子：</p>
+<p><img src="//lzs357.github.io/2019/04/22/bubbing/4.png" alt></p>
+<p><img src="//lzs357.github.io/2019/04/22/bubbing/3.png" alt></p>
+<p><img src="//lzs357.github.io/2019/04/22/bubbing/2.png" alt></p>
+<p>这就是事件冒泡</p>
+<h5 id="怎么阻止事件冒泡呢"><a href="#怎么阻止事件冒泡呢" class="headerlink" title="怎么阻止事件冒泡呢"></a>怎么阻止事件冒泡呢</h5><p>使用event.stopPropagation( );</p>
+<p>代码如下：</p>
+<pre><code>&lt;div id=&quot;div1&quot;&gt;
+            &lt;div id=&quot;div2&quot; &gt;
+                &lt;div id=&quot;div3&quot; onclick=&quot;threeFn(event)&quot;&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;</code></pre><pre><code>var div1 = document.getElementById(&#39;div1&#39;)
+    div1.onclick = function(event){
+        alert(&quot;你点击了最大的盒子&quot;);
+         event.stopPropagation();
+    }
+    var div2 = document.getElementById(&#39;div2&#39;)
+    div2.addEventListener(&#39;click&#39;,function(event){
+        alert(&#39;你点击了最中间的盒子&#39;);
+          event.stopPropagation();
+    })
+    function threeFn(event){
+        alert(&#39;你点击了最小的盒子&#39;);
+          event.stopPropagation();
+    }</code></pre><p>这时点击任意一个盒子只会触发当前的事件。</p>
 
             </div>
             <hr/>
@@ -508,7 +539,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lzs357.github.io/2020/01/14/demo/">https://lzs357.github.io/2020/01/14/demo/</a>
+                    <a href="https://lzs357.github.io/2019/04/22/bubbing/">https://lzs357.github.io/2019/04/22/bubbing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,8 +577,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/js/">
+                                    <span class="chip bg-color">js</span>
                                 </a>
                             
                         </div>
@@ -980,27 +1011,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/17/Vue/">
+                <a href="/2019/10/14/demo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="关于Vue路由的理解">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="关于动画demo上传github仓库的方法">
                         
-                        <span class="card-title">关于Vue路由的理解</span>
+                        <span class="card-title">关于动画demo上传github仓库的方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue-router的原理vue-router的原理就是监听URL的地址变化，从而渲染不同的组件。
-vue-router的模式主要有hash模式和history模式
-1，hash 模式的原理(url里带有#号的部分):
-在vue-route
+                            首先登陆github账号并创建一个新的仓库，找到下面的按钮
+
+点击按钮后，进入到创建仓库的页面，创建仓库名
+
+点击最下面的按钮即创建完成
+
+点击刚才创建好的仓库找到ssh的URL 并复制备用
+
+接着就是在本地创建文件并关联这个新创建的仓库了
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-14
                         </span>
                         <span class="publish-author">
                             
@@ -1013,8 +1049,8 @@ vue-router的模式主要有hash模式和history模式
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -1028,25 +1064,24 @@ vue-router的模式主要有hash模式和history模式
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/12/小外甥/">
+                <a href="/2019/01/11/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="小外甥">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">小外甥</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-11
                             </span>
                         <span class="publish-author">
                             
@@ -1055,14 +1090,6 @@ vue-router的模式主要有hash模式和history模式
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/日常/">
-                        <span class="chip bg-color">日常</span>
-                    </a>
-                    
                 </div>
                 
             </div>
