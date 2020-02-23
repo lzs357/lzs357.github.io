@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>vue-music-2</title>
+      <link href="/2020/02/23/vue-music-2/"/>
+      <url>/2020/02/23/vue-music-2/</url>
+      
+        <content type="html"><![CDATA[<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><p>目前已经完成了歌手，歌单和搜索的页面，比较遗憾的是在歌单详情里不能播放歌单里的歌，因为使用了AntUi里的Tab组件，这个Tab组件会把从接口里拿到的数据自动填充，并且自带分页功能，但是一个缺点是不能在其内部写方法（或许是我不够了解Tab组件），导致拿不到歌曲的id，从而播放不了。歌手，专辑和搜索的歌都是能正常播放的。</p><h5 id="页面的样式（）"><a href="#页面的样式（）" class="headerlink" title="页面的样式（）"></a>页面的样式（）</h5><p>这是首页的轮播图</p><p><img src="http://q5vmtsp5x.bkt.clouddn.com/%E8%BD%AE%E6%92%AD%E5%9B%BE.png" alt></p><p>用的是AntUi的轮播图组件，都是些本地图片，总共8张，中间小图片的轮播，用定位定上去的</p><h5 id="轮播图下面的内容："><a href="#轮播图下面的内容：" class="headerlink" title="轮播图下面的内容："></a>轮播图下面的内容：</h5><p><img src="http://q5vmtsp5x.bkt.clouddn.com/%E9%A6%96%E9%A1%B5%E5%86%85%E5%AE%B9.png" alt></p><p>当初没怎么构思页面，就写一步看一步了，然后就写了歌单和歌手的两个内容。歌单上面的一些分类是能点击的，</p><p>点击时，让这个分类的值传到接口里。</p><h5 id="接着是点击更多-出现更多歌单的页面："><a href="#接着是点击更多-出现更多歌单的页面：" class="headerlink" title="接着是点击更多 出现更多歌单的页面："></a>接着是点击更多 出现更多歌单的页面：</h5><p><img src="http://q5vmtsp5x.bkt.clouddn.com/%E6%9B%B4%E5%A4%9A%E6%AD%8C%E5%8D%95.png" alt></p><p>这里没有什么难度，就是些布局</p><h5 id="全部按钮的样式"><a href="#全部按钮的样式" class="headerlink" title="全部按钮的样式"></a>全部按钮的样式</h5><p><img src="http://q5vmtsp5x.bkt.clouddn.com/%E8%B7%9F%E5%A4%9A%E6%AD%8C%E5%8D%95%E7%9A%84%E5%88%86%E7%B1%BB.png" alt></p><p>这里用到了AntUi 的一个抽屉组件,还有Vue兄弟组件传值的方法，还遇到了一个比较烦的问题:</p><pre><code>歌单的分类词，是全部写在了一个接口里，好在里面给了一个category的属性，比如category=0时，这个接口里的数组就对应着语种这一类，我使用的方法是v-if来条件渲染 写的方法比较繁琐：</code></pre><p><img src="http://q5vmtsp5x.bkt.clouddn.com/code1.png" alt></p><p>把它分成了五个小盒子，等于对应的category就显示，不是则隐藏</p><h5 id="歌单详情"><a href="#歌单详情" class="headerlink" title="歌单详情"></a>歌单详情</h5><p><img src="http://q5vmtsp5x.bkt.clouddn.com/%E6%AD%8C%E5%8D%95%E8%AF%A6%E6%83%85.png" alt></p><p>这个歌单详情的页面放不了歌，只能拿到歌单里的歌，具体原因上面说过了</p><p>这里就是路由传参了，上面几个页面也用到了，就在这说了</p><p>传参：</p><pre><code> godetail(id) {      this.$router.push({        path:&#39;/music/songlist/detail&#39;,        query:{id:id}      })    }  },     </code></pre><p>接参：</p><pre><code>this.$route.query.id</code></pre><h5 id="更多歌手页面"><a href="#更多歌手页面" class="headerlink" title="更多歌手页面"></a>更多歌手页面</h5><p><img src="http://q5vmtsp5x.bkt.clouddn.com/%E6%9B%B4%E5%A4%9A%E6%AD%8C%E6%89%8B.png" alt></p><p>这边也有一个问题（我对数组的几种方法不是很熟悉），</p><p>类似上边歌单分类词的问题，歌手分类的接口 有一个必选参数 cat 即分类  这个cat 的值是数字 比如，华语男歌手 就对应1001，而左边的分类栏是字，两者不一样，我后来自己定义了一个数组类似这样：</p><pre><code> singerclasslist1: [                {                    class: &#39;华语男歌手&#39;,                    id: 1001,                                                                        },                {                    class: &#39;华语女歌手&#39;,                    id: 1002,                     },                {                    class: &#39;华语组合/乐队&#39;,                    id: 1003,                },             ],</code></pre><p>这样就能拿到id来传值，缺点是真的太繁琐了</p><h5 id="歌手详情页面"><a href="#歌手详情页面" class="headerlink" title="歌手详情页面"></a>歌手详情页面</h5><p><img src="http://q5vmtsp5x.bkt.clouddn.com/%E6%AD%8C%E6%89%8B%E8%AF%A6%E6%83%85.png" alt></p><p>这个里面的热门作品是能播放的，专辑和介绍也是有的，MV的页面目前还没写</p><h5 id="专辑详情"><a href="#专辑详情" class="headerlink" title="专辑详情"></a>专辑详情</h5><p><img src="http://q5vmtsp5x.bkt.clouddn.com/%E6%AD%8C%E6%89%8B%E4%B8%93%E8%BE%91%E8%AF%A6%E6%83%85.png" alt></p><p>这是点击所有专辑跳转的页面 歌曲也是能播放的</p><h5 id="搜索页面"><a href="#搜索页面" class="headerlink" title="搜索页面"></a>搜索页面</h5><p><img src="http://q5vmtsp5x.bkt.clouddn.com/%E6%90%9C%E7%B4%A2%E9%A1%B5%E9%9D%A2.png" alt></p><p>搜索页面目前只完成了 单曲 歌手 这两栏 这个里面的歌也是能播放的，后面有时间会一一补上</p><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>这次的Vue项目写了10天，学到了很多Vue的知识，对Vue的认识也更加深刻了一点</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vue-music(1)</title>
       <link href="/2019/12/15/vue-music-1/"/>
       <url>/2019/12/15/vue-music-1/</url>
